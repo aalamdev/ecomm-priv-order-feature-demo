@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <style>
+        #maindiv {
+            background-color: #c8e8ff;
+            width: 100vh; height: 100vh; margin:auto; 
+        }
+        #social-icon > img {
+            width: 96px; height:96px;
+        }
+        .connector {
+            width: calc(50% - 3px);
+            border-right: 6px solid #FFBE88;
+            height: 0;
+            transition: height 0.2s ease;
+        }
+        #social {
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        .page {
+            height: 100%;
+            width: 100%;
+            transition: transform 0.2s ease;
+        }
+        .spring-animate {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-name:spring;
+            animation-timing-function: ease-out;
+        }
+        .scrolled_down {
+            transform: translateY(100%);
+        }
+        @keyframes spring {
+            0% {
+            }
+            20% {
+            transform: translateY(-50px);
+            }
+            40% {
+            transform: translateY(20px);
+            }
+            60% {
+            transform: translateY(-6px);
+            }
+            90% {
+            transform: translateY(0px);
+            }
+            100% {
+            transform: translateY(0px);
+            }
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="t.js"></script>
+ </head>
+ <body style="overflow:hidden">
+  <div id="maindiv">
+   <div id="page1" class="page">
+    <div style="height:38.525%"></div>
+    <div id="social" style="height: 22.94%">
+        <div style="width:100%;">
+        <div class="text-center" id="social-icon">
+            <img src="images/sm/Facebook.png">
+        </div>
+        <br/>
+        <div class="text-center" id="social-comments">
+            <img src="images/facebook-comments.png">
+        </div>
+        </div>
+    </div>
+    <div style="height:38.525%" id="social-book-connector">
+        <div class="connector">
+        </div>
+    </div>
+   </div> <!-- /page1 -->
+
+   <div id="page2" class="page hidden">
+    <div style="height:calc(50% - 32px)" id="social-book-connector2">
+        <div class="connector">
+        </div>
+    </div>
+    <div id="new-order-btn" class="hidden">
+        <button class="btn btn-default btn-lg center-block">
+            <b>
+                <span class="glyphicon glyphicon-plus"></span> NEW ORDER</b>
+        </button>
+    </div>
+   </div> <!-- /page2 -->
+
+
+   <div id="page3" class="page hidden scrolled_down">
+      <div style="width: 80%; height: 100%; margin: auto; background-color: #f5faff; border: 1px solid #ddd; padding:6px">
+       <div style="height:8%">
+        <div style="height:24px; padding:2px; background-color:#ddd">
+            <div style="width: 10%;height:24px; float:left"></div>
+            <div style="width: 90%; background-color: #fff;display:inline-block">
+                <span class="text-success" style="padding:3px; font-size:12px; border-right: 1px solid #bbb">
+                    <span class="glyphicon glyphicon-lock" style="padding: 0 6px"></span>
+                    <span style="padding: 0 6px">Secure</span>
+                </span>
+                <span style="padding:3px 6px">
+                    <span class="text-success">https:</span>
+                    <span>//ecomm-demo.aalam.cloud/aalam/ecomm/h/0/3</span>
+                </span>
+            </div>
+        </div>
+       </div>
+       <div class="panel panel-default"> <!-- Address panel -->
+        <div class="panel-heading">
+            <small><b class="panel-title">ORDERED ITEMS</b></small>
+        </div>
+        <div class="panel-body">
+            <div class="col-xs-6 text-right"><b>Name</b></div>
+            <div class="col-xs-6 text-left">John Appleseed</div>
+            <div class="col-xs-6 text-right"><b>Address</b></div>
+            <div class="col-xs-6 text-left">
+                <div>#Door No, Some Street,</div>
+                <div>Some City</div>
+                <div>Post Code - xxxxxx</div>
+            </div>
+            <div class="col-xs-6 text-right"><b>Mobile</b></div>
+            <div class="col-xs-6 text-left">9366661133</div>
+            <div class="clearfix"></div>
+            <br/>
+            <p class="text-primary text-center">
+                <span id="share-button" class="btn btn-default">
+                    <img src="images/sm/WhatsApp.png" style="width:28px;height:28px">
+                    <b>Share<b>
+                </span>
+            </p>
+
+        </div>
+       </div> <!-- /End Address Panel -->
+
+       <div class="panel panel-default"> <!-- Invoice panel -->
+           <div class="panel-heading">
+            <small><b class="panel-title">ORDERED ITEMS</b></small>
+           </div>
+           <div class="panel-body">
+            <div>
+              <div class="col-xs-3" style="padding:0px">
+                  <img src="images/image-icon.png" style="width:100%">
+              </div>
+              <div class="col-xs-6">
+                  <a href="/aalam/stock/r/item/10"><p  class="item-name">Product Name</p></a>
+                  <p>
+                      Price:
+                      <span>
+                         <b class="item-price">₹ 3400</b>
+                      </span>
+                  </p>
+                  <p style="margin:0px;"> Quantity: <b >1</b></p>
+              </div>
+              <div class="col-xs-3">
+                  <p>
+                  <b  class="item-price">
+                  ₹ 3400.00
+                  </b>
+                  </p>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div  class="col-xs-12">
+                <div  style="margin: 8px 0px">
+                    <p>
+                        <span class="col-xs-9 text-right">
+                        IGST Tax
+                        </span>
+                        <span class="col-xs-3" style="white-space:nowrap"> <b >₹ 170</b></span>
+                        <span class="clearfix"></span>
+                    </p>
+                    <p>
+                        <span class="col-xs-9 text-right">
+                        Zonal Shipping Charges
+                        </span>
+                        <span class="col-xs-3" style="white-space:nowrap"> <b >₹ 60</b></span>
+                        <span class="clearfix"></span>
+                    </p>
+                    <p  class="col-xs-9 text-right text-danger"><b  class="item-price">Total</b></p>
+                    <p  class="col-xs-3 text-danger"><b  class="item-price">₹ 3623</b></p>
+                    <div  class="clearfix"></div>
+                </div>
+            </div>
+           </div>
+       </div> <!-- /End Order items -->
+    </div> 
+   </div> <!-- /page3 -->
+
+   
+  </div> <!-- /maindiv -->
+ </body>
+</html>
