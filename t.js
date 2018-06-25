@@ -148,7 +148,14 @@ function step_7() {
 }
 
 function step_8() {
-
+    setTimeout(function() {
+        $("#pay-msg").addClass("msg-nfy-top");
+        setTimeout(function() {
+            $("#pay-msg").removeClass("msg-nfy-top");
+            setTimeout(function() {
+            }, 1000);
+        }, 3000);
+    }, 800);
 }
 
 $(document).ready(function() {
