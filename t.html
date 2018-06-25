@@ -57,6 +57,11 @@
             transform: translateY(0px);
             }
         }
+        .card-number {
+            margin: 0px 6px;
+            letter-spacing: 0.189em;
+            color: #666;
+        }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="t.js"></script>
@@ -215,9 +220,72 @@
    </div> <!-- /page4 -->
 
    <div id="page5" class="page hidden scrolled-right">
-     <div style="width:80%;margin:auto;height:100%;background-color:pink">
+     <div style="width:80%;margin:auto;height:100%;background-color:#f5faff">
+       <div style="height:8%">
+        <div style="height:24px; padding:2px; background-color:#ddd">
+            <div style="width: 10%;height:24px; float:left"></div>
+            <div style="width: 90%; background-color: #fff;display:inline-block">
+                <span class="text-success" style="padding:3px; font-size:12px; border-right: 1px solid #bbb">
+                    <span class="glyphicon glyphicon-lock" style="padding: 0 6px"></span>
+                    <span style="padding: 0 6px">Secure</span>
+                </span>
+                <span style="padding:3px 6px">
+                    <span class="text-success">https:</span>
+                    <span>//paygateway.com/pay</span>
+                </span>
+            </div>
+        </div>
+       </div>
+       <div style="margin-top: 96px">
+           <div style="margin-bottom:20px">
+               <div class="col-xs-4 text-right">Card Number</div>
+               <div class="col-xs-8">
+                   <span style="background-color:white; border: 1px solid #ccc; padding:6px; border-radius:3px">
+                       <span class="card-number">XXXX</span>
+                       <span class="card-number">XXXX</span>
+                       <span class="card-number">XXXX</span>
+                       <span class="card-number">XXXX</span>
+                   </span>
+               </div>
+               <div class="clearfix"></div>
+           </div>
+
+           <div style="margin-bottom:20px">
+               <div class="col-xs-4 text-right">Expiry Date</div>
+               <div class="col-xs-8">
+                   <span style="background-color:white; border: 1px solid #ccc; border-radius:3px; padding:6px">
+                       <span class="card-number">Mar</span>
+                       <span class="card-number">/<span>
+                       <span class="card-number">1984</span>
+                   </span>
+               </div>
+               <div class="clearfix"></div>
+           </div>
+
+           <div style="margin-bottom:20px">
+               <div class="col-xs-4 text-right">CVV</div>
+               <div class="col-xs-8">
+                   <span style="background-color:white; border: 1px solid #ccc; padding:6px; border-radius:3px">
+                       <span class="card-number">XXX</span>
+                   </span>
+               </div>
+               <div class="clearfix"></div>
+           </div>
+
+           <br/>
+           <div>
+               <button class="btn btn-default center-block" id="pay-button">
+                   <span class="glyphicon glyphicon-credit-card"></span> Pay
+               </button>
+           </div>
+       </div>
      </div>
-   </div>
+   </div> <!-- /End Page 5 -->
+
+   <div id="page6" class="page hidden scrolled_right">
+     <div style="width:80%;margin:auto;height:100%;background-color:#f5faff">
+     </div>
+   </div> <!-- /End page 6 -->
 
   </div> <!-- /maindiv -->
  </body>

@@ -124,10 +124,30 @@ function step_6() {
                 }, 200);
             }, 400)
         }, 400);
-    }, 500);
+    }, 800);
 }
 
 function step_7() {
+    setTimeout(function() {
+        $("#pay-button").addClass("btn-danger");
+        setTimeout(function() {
+            $("#pay-button").removeClass("btn-danger");
+            setTimeout(function() {
+                $("#page5").css("transform", "translateX(-100%)");
+                $("#page6").removeClass("hidden");
+                setTimeout(function() {
+                    $("#page5").addClass("hidden");
+                    setTimeout(function() {
+                        $("#page6").removeClass("scrolled_right");
+                        step_8();
+                    }, 10);
+                }, 200);
+            }, 200);
+        }, 400);
+    }, 800);
+}
+
+function step_8() {
 
 }
 
