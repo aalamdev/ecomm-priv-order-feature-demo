@@ -35,6 +35,9 @@
         .scrolled_down {
             transform: translateY(100%);
         }
+        .scrolled_right {
+            transform: translateX(100%);
+        }
         @keyframes spring {
             0% {
             }
@@ -130,7 +133,7 @@
             <p class="text-primary text-center">
                 <span id="share-button" class="btn btn-default">
                     <img src="images/sm/WhatsApp.png" style="width:28px;height:28px">
-                    <b>Share<b>
+                    <b>Share</b>
                 </span>
             </p>
 
@@ -191,7 +194,31 @@
     </div> 
    </div> <!-- /page3 -->
 
-   
+   <div id="page4" class="page hidden scrolled_right">
+    <div style="width:80%;margin:auto;height:100%;">
+        <div style="height:48px;background-color:#fff;padding:12px;border-bottom:1px solid #bbb">
+            <span class="glyphicon glyphicon-menu-left text-primary" style="font-size:28px;margin-right:6px"></span>
+            <span style="display:inline-block;width:28px;height:28px;border-radius:50%;background-color:rgb(255,145,123)"></span>
+            <span style="display:inline-block;vertical-align:top;margin-left: 6px;padding-top:5px"><b>John Appleseed</b></span>
+        </div>
+        <div style="background-color:#f5faff; height:calc(100% - 96px);">
+            <div style="width:80%; float:right;padding-right:12px">
+                <img src="images/whatsapp-chat.png" style="width:100%;margin-top:24px;height:auto" id="whatsapp-chat">
+            </div>
+        </div>
+        <div style="height:48px;background-color:#fff;padding:6px;border-top:1px solid #bbb">
+            <span class="glyphicon glyphicon-paperclip text-primary pull-left" style="font-size:24px"></span>
+            <div style="height:100%;border-radius:6px;border:1px solid #999;margin-left: 44px">
+            </div>
+        </div>
+    </div>
+   </div> <!-- /page4 -->
+
+   <div id="page5" class="page hidden scrolled-right">
+     <div style="width:80%;margin:auto;height:100%;background-color:pink">
+     </div>
+   </div>
+
   </div> <!-- /maindiv -->
  </body>
 </html>

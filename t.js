@@ -92,14 +92,43 @@ function step_5() {
         $(share_btn).addClass("btn-success")
         setTimeout(function() {
             $(share_btn).removeClass("btn-success");
-            $("#page3").css("transform", "translateX(-100%)");
-            $("#page4").removeClass("hidden");
             setTimeout(function() {
-                $("#page4").removeClass("scrolled_right");
-                step_5();
-            }, 10);
+                $("#page3").css("transform", "translateX(-100%)");
+                $("#page4").removeClass("hidden");
+                setTimeout(function() {
+                    $("#page3").addClass("hidden");
+                    setTimeout(function() {
+                        $("#page4").removeClass("scrolled_right");
+                        step_6();
+                    }, 10);
+                }, 200);
+            }, 200);
         }, 400);
     }, 1200); //transition duration for transform animation + 1sec
+}
+
+function step_6() {
+    setTimeout(function() {
+        $("#whatsapp-chat").attr("src", "images/whatsapp-chat-link-selected.png");
+        setTimeout(function() {
+            $("#whatsapp-chat").attr("src", "images/whatsapp-chat.png");
+            setTimeout(function() {
+                $("#page4").css("transform", "translateX(-100%)");
+                $("#page5").removeClass("hidden");
+                setTimeout(function() {
+                    $("#page4").addClass("hidden");
+                    setTimeout(function() {
+                        $("#page5").removeClass("scrolled_right");
+                        step_7();
+                    }, 10);
+                }, 200);
+            }, 400)
+        }, 400);
+    }, 500);
+}
+
+function step_7() {
+
 }
 
 $(document).ready(function() {
