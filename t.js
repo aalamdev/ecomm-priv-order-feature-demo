@@ -153,9 +153,18 @@ function step_8() {
         setTimeout(function() {
             $("#pay-msg").removeClass("msg-nfy-top");
             setTimeout(function() {
-            }, 1000);
+                $("#page6-subdiv").css("transform", "scale(2.5)").css("opacity", "0").css("filter", "blur(1.23rem)");
+                setTimeout(function() {
+                    $("#page6").addClass("hidden");
+                    $("#page7").removeClass("hidden");
+                    step_9();
+                }, 600);
+            }, 1100);
         }, 3000);
     }, 800);
+}
+
+function step_9() {
 }
 
 $(document).ready(function() {

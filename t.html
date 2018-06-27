@@ -68,7 +68,7 @@
         }
         #pay-msg {
             position:absolute;
-            top:-209px;
+            top:-250px;
             width:80%;
             left:10%;
             z-index:1;
@@ -76,6 +76,9 @@
             border: 1px solid #bbb;
             border-radius: 25px;
             background-color: #f9f9f9;
+        }
+        #page6-subdiv {
+            transition: all 0.5s ease;
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -298,7 +301,7 @@
    </div> <!-- /End Page 5 -->
 
    <div id="page6" class="page hidden scrolled_right">
-     <div style="width:80%;margin:auto;height:100%;background-color:#f5faff">
+     <div style="width:80%;margin:auto;height:100%;background-color:#f5faff" id="page6-subdiv">
        <div style="position:relative; text-align:center">
           <img src="images/msg-payment.png" id="pay-msg">
        </div>
@@ -317,7 +320,7 @@
             </div>
         </div>
        </div>
-       <div style="height:17%"></div>
+       <div style="height:17%">
            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
                <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
@@ -329,6 +332,11 @@
        </div>
      </div>
    </div> <!-- /End page 6 -->
+
+   <div id="page7" class="page hidden">
+     <div style="width:80%;margin:auto;height:100%;background-color:#f5faff">
+     </div>
+   </div> <!-- /End page 7 -->
 
   </div> <!-- /maindiv -->
  </body>
