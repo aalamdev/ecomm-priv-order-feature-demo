@@ -6,12 +6,20 @@ function set_social_icon(img) {
     $("#social-icon").children("img").attr("src", "images/sm/" + img);
 }
 
+function set_subtitle(val) {
+    $("#subtitle").find("p").html(val);
+}
+
 function step_1() {
+    $("#subtitle").removeClass("hidden");
     var icons = ['Facebook.png', 'Google+.png', 'Yelp.png', 'Pinterest.png', 'Snapchat.png',
                  'Twitter.png', 'Tumblr.png', 'WhatsApp.png', 'Stumbleupon.png', 'Instagram.png']
     for (let i = 0; i < icons.length; i++) {
         setTimeout(function() {set_social_icon(icons[i])}, i * 400);
     }
+    setTimeout(function() {
+        set_subtitle("from your social media pages");
+    }, 2000);
     var comments = [
         "facebook", "whatsapp", "random", "insta"]
     for (let i = 1; i < comments.length; i++) {
@@ -60,6 +68,7 @@ function step_3() {
         $(connector).css("height", "100%");
     }, 800)
     setTimeout(function() {
+        set_subtitle("Place an order for each request");
         $("#new-order-btn").removeClass("hidden").addClass("spring-animate");
         step_4();
     }, 1000);
@@ -88,6 +97,7 @@ function step_4() {
 
 function step_5() {
     setTimeout(function() {
+        set_subtitle("Share the order page to the customer");
         var share_btn = $("#share-button")
         $(share_btn).addClass("btn-success")
         setTimeout(function() {
@@ -128,6 +138,7 @@ function step_6() {
 }
 
 function step_7() {
+    set_subtitle("where he/she can pay for the order");
     setTimeout(function() {
         $("#pay-button").addClass("btn-danger");
         setTimeout(function() {
@@ -164,11 +175,55 @@ function step_8() {
     }, 800);
 }
 
-function step_9() {
+function step_9(sub_step=1) {
+   set_subtitle("Notify customer on his/her order updates");
+   $("#page7-sidediv").removeClass("scrolled_vleft");
+   setTimeout(function() {
+       var date1 = (sub_step == 1)?"16th June, 2018":"20th June, 2018";
+       var side_div_id = (sub_step == 1)?"#p7-sd-s1":"#p7-sd-s2";
+       var inp = $(side_div_id).find("input.updatable_input");
+       for (let i = 0; i < date1.length; i++) {
+           setTimeout(function() {$(inp).val(date1.substring(0, i+1));}, 20*i);
+       }
+       setTimeout(function() {
+           var btn = $(side_div_id).find("button");
+           $(btn).removeClass("btn-default").addClass("btn-primary");
+           setTimeout(function() {
+                $(btn).removeClass("btn-primary").addClass("btn-default");
+                setTimeout(function() {
+                    $("#page7-sidediv").addClass("scrolled_vleft");
+                    setTimeout(function() {
+                        var img_sel = (sub_step == 1)?"img:nth-child(2)":"img:nth-child(3)";
+                        $("#p7-main-img").find(img_sel).removeClass("scrolled_vdown");
+                        if (sub_step == 1) {
+                            $("#p7-sd-s1").addClass("hidden");
+                            $("#p7-sd-s2").removeClass("hidden");
+                            setTimeout(function() {
+                                step_9(2);
+                            },1000);
+                        } else {
+                            $("#subtitle").addClass("hidden");
+                            setTimeout(function() {
+                                $("#page7").addClass("hidden");
+                                step_10();
+                            }, 1500);
+                        }
+                    }, 200)
+                }, 400);
+           }, 400)
+       }, 20*date1.length + 500);
+   }, 500)
+}
+
+function step_10() {
+    $("#page8").removeClass("hidden");
+    setTimeout(function() {
+        $("#page8").find("big").css("font-size", "3em");
+    }, 500)
 }
 
 $(document).ready(function() {
     setTimeout(function() {
-        step_2();
+        step_1();
     }, 1000)
 })

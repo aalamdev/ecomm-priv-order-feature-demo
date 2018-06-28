@@ -8,6 +8,12 @@
             background-color: #c8e8ff;
             width: 100vh; height: 100vh; margin:auto; 
         }
+        #subtitle {
+            position: fixed;
+            bottom: 10%;
+            width: 50%;
+            left: 25%;
+        }
         #social-icon > img {
             width: 96px; height:96px;
         }
@@ -80,6 +86,39 @@
         #page6-subdiv {
             transition: all 0.5s ease;
         }
+        #page7-sidediv {
+            position:absolute;
+            width: 300px;
+            height: 100%;
+            top: 0;
+            left: 1px;
+            margin-left: calc((100vw - 100vh)/2);
+            background-color:white;
+            border-right: 1px solid #ccc;
+            transition: transform 0.2s ease;
+        }
+        .scrolled_vleft {
+            transform: translateX(-150%);
+        }
+        .p7-sd-p {
+            padding: 0px 12px;
+            padding-top: 20%;
+        }
+        #p7-main-img {
+            border-left: 8px solid #878787; border-right: 9px solid #878787;
+            text-align:center;
+            height:100%;
+        }
+        #p7-main-img > img {
+            width: 60%;
+            border:1px solid #ddd;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.5s ease;
+        }
+        .scrolled_vdown {
+            transform: translateY(500%);
+        }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="t.js"></script>
@@ -124,14 +163,14 @@
        <div style="height:8%">
         <div style="height:24px; padding:2px; background-color:#ddd">
             <div style="width: 10%;height:24px; float:left"></div>
-            <div style="width: 90%; background-color: #fff;display:inline-block">
+            <div style="width: 90%; background-color: #fff;display:inline-block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">
                 <span class="text-success" style="padding:3px; font-size:12px; border-right: 1px solid #bbb">
                     <span class="glyphicon glyphicon-lock" style="padding: 0 6px"></span>
                     <span style="padding: 0 6px">Secure</span>
                 </span>
                 <span style="padding:3px 6px">
                     <span class="text-success">https:</span>
-                    <span>//ecomm-demo.aalam.cloud/aalam/ecomm/h/0/3</span>
+                    <span>//store.aalam-ecomm-demo.cloud/aalam/ecomm/h/0/26</span>
                 </span>
             </div>
         </div>
@@ -334,10 +373,73 @@
    </div> <!-- /End page 6 -->
 
    <div id="page7" class="page hidden">
+     <div id="page7-sidediv" class="scrolled_vleft">
+        <div id="p7-sd-s1" class="p7-sd-p">
+            <h4 class="text-center">Order <b>#26</b></h4>
+            <p class="text-center"><img src="images/new-order.png"/></p>
+            <br/>
+            <div>
+                <label class="control-label">Estimated Shipping Date</label>
+                <input class="form-control updatable_input"/>
+            </div>
+            <br/>
+            <button class="btn btn-default center-block">
+                <span class="glyphicon glyphicon-ok"></span> Accept Order?
+            </button>
+        </div>
+        <div id="p7-sd-s2" class="p7-sd-p hidden">
+            <h4 class="text-center">Order <b>#26</b></h4>
+            <p class="text-center" style="color:rgb(255,145,123)">
+                <span style="font-size:64px" class="glyphicon glyphicon-ok"></span> <br/><b>Accepted</b></p>
+            <br/>
+            <div class="form-group">
+                <label class="control-label">Cargo Name</label>
+                <input class="form-control" value="Porfessional Couriers"/>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Tracking Number</label>
+                <input class="form-control" value="1234567890"/>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Expected Delivery Date</label>
+                <input class="form-control updatable_input"/>
+            </div>
+            <br/>
+            <button class="btn btn-default center-block">
+                <span class="glyphicon glyphicon-plane"></span> Order Shipped?
+            </button>
+        </div>
+     </div>
      <div style="width:80%;margin:auto;height:100%;background-color:#f5faff">
+        <img style="width:100%;height:auto" src="images/mobile-head.png"/>
+        <div id="p7-main-img">
+            <img src="images/msg-payment.png"/>
+            <img src="images/msg-accepted.png" class="scrolled_vdown"/>
+            <img src="images/msg-shipped.png" class="scrolled_vdown"/>
+        </div>
      </div>
    </div> <!-- /End page 7 -->
 
+   <div id="page8" class="page hidden">
+    <div style="padding-top:35.33%;text-align:center">
+      <div style="height:100px">
+        <big style="transition: font-size 2s ease">
+            <span style="color:rgb(255,145,123)"><b>https://www.aalam.io/online-shop</b></span>
+        </big>
+      </div>
+      <div style="color: #777">
+        <p>For more information on other exciting <br/><b>features</b> and <b>pricing</b></p>
+      </div>
+    </div>
+   </div> <!-- /End page 8 -->
+
+  <div id="subtitle" class="hidden">
+    <div style="background-color: rgba(255, 255, 255, 0.5);filter: blur(10px);height: 50px;">
+    </div>
+    <p style="filter:none;position: absolute;top: 30%;text-align: center;left: 0px;right: 0px;font-weight:700;font-size:1.2em;color:#555">
+       Consolidate orders
+    </p>
+  </div>
   </div> <!-- /maindiv -->
  </body>
 </html>
